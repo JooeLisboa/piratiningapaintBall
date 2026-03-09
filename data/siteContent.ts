@@ -14,6 +14,7 @@ export type GameMode = {
   note?: string;
   highlight?: boolean;
 };
+
 export type PricingItem = {
   title: string;
   price: string;
@@ -21,6 +22,7 @@ export type PricingItem = {
   items?: string[];
   featured?: boolean;
 };
+
 export type NoticeItem = { title: string; description: string };
 export type TestimonialItem = { quote: string; author?: string };
 export type GalleryImage = { src: string; alt: string; title?: string };
