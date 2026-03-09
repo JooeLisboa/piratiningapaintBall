@@ -1,10 +1,11 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, MessageCircle, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { headerNavItems } from '@/data/siteContent';
+import { headerNavItems, siteContent } from '@/data/siteContent';
 import { MobileMenu } from './MobileMenu';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 import { cn } from '@/lib/utils';
@@ -14,36 +15,23 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 18);
     onScroll();
     window.addEventListener('scroll', onScroll);
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-50 border-b transition-all duration-300',
-        scrolled
-          ? 'border-white/15 bg-black/80 shadow-[0_14px_40px_rgba(0,0,0,.45)] backdrop-blur-2xl'
-          : 'border-transparent bg-gradient-to-b from-black/85 to-black/35 backdrop-blur-md'
-      )}
-    >
+    <header className={cn('sticky top-0 z-50 transition-all duration-300', scrolled ? 'bg-black/86 backdrop-blur-2xl border-b border-brand-primary/25' : 'bg-black/55 backdrop-blur-lg')}>
+      <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-brand-primary/70 to-transparent" />
       <div className="container-max flex h-20 items-center justify-between gap-4">
-        <Link href="/" className="group">
-          <p className="text-xs uppercase tracking-[0.35em] text-zinc-400">Arena Paintball</p>
-          <p className="text-lg font-black tracking-wide text-white transition group-hover:text-accent-500 md:text-xl">
-            PIRATININGA
-          </p>
+        <Link href="/" className="relative h-11 w-44 shrink-0 md:h-12 md:w-52">
+          <Image src={siteContent.logo} alt="Logo Arena Paintball" fill className="object-contain object-left" priority />
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
           {headerNavItems.map((item) => (
-            <Link
-              key={item.label}
-              href={item.href}
-              className="rounded-full px-3 py-2 text-sm font-medium text-zinc-200 transition hover:bg-white/10 hover:text-white"
-            >
+            <Link key={item.label} href={item.href} className="rounded-full px-3 py-2 text-sm font-semibold text-brand-muted transition hover:bg-white/10 hover:text-brand-text">
               {item.label}
             </Link>
           ))}
@@ -55,17 +43,13 @@ export function Header() {
           rel="noopener noreferrer"
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
-          className="hidden items-center gap-2 rounded-full bg-accent-500 px-4 py-2.5 text-sm font-bold text-black shadow-glow md:inline-flex"
+          className="hidden btn-primary shadow-brand md:inline-flex"
         >
-          <MessageCircle size={16} />
+          <MessageCircle size={16} className="mr-2" />
           Agendar pelo WhatsApp
         </motion.a>
 
-        <button
-          aria-label={open ? 'Fechar menu' : 'Abrir menu'}
-          className="rounded-lg border border-white/20 p-2 md:hidden"
-          onClick={() => setOpen((prev) => !prev)}
-        >
+        <button aria-label={open ? 'Fechar menu' : 'Abrir menu'} className="rounded-lg border border-white/20 p-2 md:hidden" onClick={() => setOpen((v) => !v)}>
           {open ? <X /> : <Menu />}
         </button>
       </div>

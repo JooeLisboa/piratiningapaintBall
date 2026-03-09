@@ -10,23 +10,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        tactical: {
-          950: '#060806',
-          900: '#101510',
-          800: '#1a261a',
-          700: '#253625',
-          500: '#4a6a3a'
-        },
-        accent: {
-          500: '#f59e0b',
-          600: '#d97706'
+        brand: {
+          bg: '#050505',
+          surface: '#07242b',
+          primary: '#ff6a00',
+          primaryHover: '#ff8a1c',
+          text: '#f5f7f8',
+          muted: '#bfc7cc'
         }
       },
       boxShadow: {
-        glow: '0 12px 35px rgba(245, 158, 11, 0.18)'
+        brand: '0 18px 42px rgba(255,106,0,.18)',
+        soft: '0 10px 24px rgba(0,0,0,.35)'
       },
       backgroundImage: {
-        noise: "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewBox=\"0 0 100 100\"%3E%3Cfilter id=\"n\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.65\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100\" height=\"100\" filter=\"url(%23n)\" opacity=\".2\"/%3E%3C/svg%3E')"
+        noise: "url('data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" width=\"200\" height=\"200\" viewBox=\"0 0 100 100\"%3E%3Cfilter id=\"n\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.7\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100\" height=\"100\" filter=\"url(%23n)\" opacity=\".16\"/%3E%3C/svg%3E')"
       }
     }
   },

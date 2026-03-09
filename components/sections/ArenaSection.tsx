@@ -14,13 +14,13 @@ const highlights = [
 export function ArenaSection() {
   return (
     <AnimatedSection className="container-max py-16 md:py-20">
-      <SectionTitle eyebrow="Diferenciais" title="Arena de paintball com padrão profissional" description="A Arena Paintball - Piratininga PaintBall combina adrenalina com estrutura confiável para transformar o lazer em Piratininga em uma experiência premium." />
+      <SectionTitle eyebrow="Diferenciais" title="Arena de paintball com padrão profissional" description="Estrutura premium, segurança e diversão com atmosfera esportiva de alto impacto." />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {highlights.map((item) => (
-          <article key={item.title} className="card-surface p-5 transition hover:-translate-y-1 hover:border-accent-500/50">
-            <item.icon className="text-accent-500" size={20} />
-            <h3 className="mt-3 font-semibold">{item.title}</h3>
-            <p className="mt-2 text-sm text-zinc-300">{item.description}</p>
+          <article key={item.title} className="card-surface p-5 transition hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-brand">
+            <item.icon className="text-brand-primary" size={20} />
+            <h3 className="mt-3 font-bold text-brand-text">{item.title}</h3>
+            <p className="mt-2 text-sm text-brand-muted">{item.description}</p>
           </article>
         ))}
       </div>

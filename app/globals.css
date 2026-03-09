@@ -11,7 +11,8 @@ html {
 }
 
 body {
-  @apply bg-tactical-950 text-zinc-100 antialiased;
+  @apply bg-brand-bg text-brand-text antialiased;
+  background-image: radial-gradient(circle at 20% -10%, rgba(255,106,0,.12), transparent 35%), radial-gradient(circle at 85% 115%, rgba(7,36,43,.65), transparent 35%);
 }
 
 .container-max {
@@ -19,5 +20,13 @@ body {
 }
 
 .card-surface {
-  @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md;
+  @apply rounded-2xl border border-white/10 bg-brand-surface/65 shadow-soft backdrop-blur-xl;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-full bg-brand-primary px-6 py-3 font-bold text-black transition hover:bg-brand-primaryHover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-full border border-brand-primary/50 bg-black/20 px-6 py-3 font-semibold text-brand-text transition hover:border-brand-primary hover:bg-brand-primary/10;
 }

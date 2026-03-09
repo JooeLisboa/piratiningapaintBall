@@ -1,34 +1,27 @@
 # Arena Paintball - Piratininga PaintBall
 
-Site institucional/comercial com foco em conversão via WhatsApp.
+Site institucional/comercial com foco em conversão via WhatsApp, visual dark premium e identidade alinhada à logo oficial.
 
 ## Visão geral do projeto
-
 - **Stack:** Next.js (App Router), TypeScript, Tailwind CSS, Framer Motion, lucide-react.
 - **Arquitetura híbrida:**
   - `/` Home (seções de conversão)
   - `/galeria` página satélite da galeria
   - `/recados` página satélite de recados
-- **Objetivo principal:** facilitar agendamento pelo WhatsApp com layout premium e experiência mobile forte.
 
 ## Como rodar localmente
-
 ```bash
 npm install
 npm run dev
 ```
 
-Acesse `http://localhost:3000`.
-
 ## Build de produção
-
 ```bash
 npm run build
 npm run start
 ```
 
 ## Estrutura de pastas
-
 ```txt
 app/
   layout.tsx
@@ -48,82 +41,97 @@ lib/
   utils.ts
 public/
   images/
+    logo/
     hero/
     gallery/
     placeholders/
 ```
 
 ## Onde editar cada parte do site
-
 ### Editar Hero (textos)
-- Arquivo: `data/siteContent.ts`
-- Chave: `siteContent.heroContent.title` e `siteContent.heroContent.subtitle`
+- `data/siteContent.ts` → `siteContent.heroContent.title` / `subtitle`
 
 ### Trocar imagem principal do Hero
-- Arquivo da imagem: `public/images/hero/hero-bg.svg`
-- Referência no conteúdo: `data/siteContent.ts` em `siteContent.heroContent.image`
-- Render do Hero: `components/sections/HeroSection.tsx` (componente `<Image src={siteContent.heroContent.image} ... />`)
+- Arquivo: `public/images/hero/hero-bg.svg`
+- Path usado em: `data/siteContent.ts` → `siteContent.heroContent.image`
+- Render: `components/sections/HeroSection.tsx`
 
-### Editar Modalidades
-- Arquivo: `data/siteContent.ts`
-- Chave: `siteContent.gameModes[]`
+### Trocar logo oficial
+- Arquivo: `public/images/logo/arena-logo.svg`
+- Uso no Header/Hero/Footer/CTA final em:
+  - `components/layout/Header.tsx`
+  - `components/sections/HeroSection.tsx`
+  - `components/layout/Footer.tsx`
+  - `components/sections/FinalCtaSection.tsx`
 
-### Editar Regras
-- Arquivo: `data/siteContent.ts`
-- Chaves: `siteContent.rules[]` e `siteContent.rulesAlert`
+### Editar galeria e imagens
+- Dados: `data/siteContent.ts` → `siteContent.galleryImages[]`
+- Imagens: `public/images/gallery/`
+- UI da galeria/lightbox: `components/sections/GallerySection.tsx`
 
-### Editar Preços
-- Arquivo: `data/siteContent.ts`
-- Chave: `siteContent.pricing[]`
+### Editar modalidades
+- `data/siteContent.ts` → `siteContent.gameModes[]`
 
-### Editar Recados
-- Arquivo: `data/siteContent.ts`
-- Chave: `siteContent.notices[]`
-- Página que exibe recados: `/recados` (`components/pages/NoticesPageContent.tsx`)
+### Editar regras
+- `data/siteContent.ts` → `siteContent.rules[]` e `siteContent.rulesAlert`
 
-### Editar Galeria
-- Arquivo de dados: `data/siteContent.ts` (`siteContent.galleryImages[]`)
-- Imagens físicas: `public/images/gallery/`
-- Página da galeria: `/galeria` (`components/pages/GalleryPageContent.tsx`)
+### Editar preços
+- `data/siteContent.ts` → `siteContent.pricing[]`
 
-### Trocar telefone, WhatsApp e contato
-- Arquivo: `data/siteContent.ts`
-- Campos: `phoneDisplay`, `whatsappNumber`, `contactName`
-- URL/mensagem WhatsApp: `lib/whatsapp.ts`
+### Editar recados
+- `data/siteContent.ts` → `siteContent.notices[]`
+- Página: `components/pages/NoticesPageContent.tsx`
 
-### Editar endereço e link do mapa
-- Arquivo: `data/siteContent.ts`
-- Campos: `address`, `mapsUrl`
+### Editar contato / WhatsApp
+- Dados: `data/siteContent.ts` (`phoneDisplay`, `whatsappNumber`, `contactName`)
+- URL/mensagem: `lib/whatsapp.ts`
+- Formulário: `components/forms/BookingForm.tsx`
 
-### Editar links do Header
-- Arquivo: `data/siteContent.ts`
-- Estrutura: `headerNavItems[]`
-- Renderização: `components/layout/Header.tsx` e `components/layout/MobileMenu.tsx`
+### Editar endereço e mapa
+- `data/siteContent.ts` → `address`, `mapsUrl`
 
-### Editar conteúdo do Footer
-- Arquivo: `components/layout/Footer.tsx`
-- Dados consumidos de: `data/siteContent.ts`
+### Editar navegação do header
+- Itens: `data/siteContent.ts` → `headerNavItems[]`
+- Render desktop/mobile:
+  - `components/layout/Header.tsx`
+  - `components/layout/MobileMenu.tsx`
 
-### Editar SEO (Home e páginas satélites)
-- Home/global: `app/layout.tsx` + `data/siteContent.ts` (`siteContent.seo.homeTitle/homeDescription`)
-- Galeria: `app/galeria/page.tsx` + `siteContent.seo.galleryTitle/galleryDescription`
-- Recados: `app/recados/page.tsx` + `siteContent.seo.noticesTitle/noticesDescription`
+### Editar footer
+- `components/layout/Footer.tsx`
 
-## Navegação (âncoras + páginas)
+### Editar SEO
+- Home/global: `app/layout.tsx` + `data/siteContent.ts` (`seo.homeTitle`, `seo.homeDescription`)
+- Galeria: `app/galeria/page.tsx` + `seo.galleryTitle`, `seo.galleryDescription`
+- Recados: `app/recados/page.tsx` + `seo.noticesTitle`, `seo.noticesDescription`
 
-- Links de seção da home usam `/#id`:
-  - `/#arena-paintball`
-  - `/#modalidades`
-  - `/#regras`
-  - `/#precos`
-  - `/#contato`
-- Páginas satélites:
-  - `/galeria`
-  - `/recados`
+## Branding e sistema visual (nova identidade)
+### Onde alterar a paleta
+- Tokens de cor: `tailwind.config.ts` em `theme.extend.colors.brand`
+  - `brand.bg`
+  - `brand.surface`
+  - `brand.primary`
+  - `brand.primaryHover`
+  - `brand.text`
+  - `brand.muted`
 
-## Observações importantes para manutenção
+### Onde alterar botões e visual global
+- Estilos utilitários globais: `app/globals.css`
+  - `.btn-primary`
+  - `.btn-secondary`
+  - `.card-surface`
 
-1. **Não espalhe conteúdo textual em vários componentes.** Priorize `data/siteContent.ts`.
-2. **Ao trocar imagens**, mantenha os arquivos em `public/images/...` e atualize os paths no conteúdo.
-3. **Para alterar o comportamento de envio do formulário**, revise `lib/whatsapp.ts` antes de mexer em `BookingForm.tsx`.
-4. **Mantenha a consistência visual** reutilizando `SectionTitle`, `AnimatedSection` e estilos já definidos.
+### Onde ajustar header premium
+- `components/layout/Header.tsx`
+- `components/layout/MobileMenu.tsx`
+
+### Onde ajustar CTAs principais
+- Hero: `components/sections/HeroSection.tsx`
+- Preços: `components/sections/PricingSection.tsx`
+- Contato: `components/sections/ContactSection.tsx`
+- CTA final: `components/sections/FinalCtaSection.tsx`
+
+## Observações para manutenção
+1. Priorize `data/siteContent.ts` para textos e conteúdo comercial.
+2. Mantenha imagens em `public/images/...` com paths limpos.
+3. Evite adicionar novas dependências sem necessidade.
+4. Preservar consistência de branding usando tokens `brand.*`.
