@@ -37,7 +37,7 @@ export const headerNavItems: HeaderNavItem[] = [
 
 export const siteContent = {
   brand: "Arena Paintball - Piratininga PaintBall",
-  logo: "/images/logo/arena-logo.svg",
+  logo: "/images/logo/arena-logo.jpg",
   whatsappNumber: "5514996222202",
   phoneDisplay: "(14) 99622-2202",
   contactName: "Mateus",
@@ -59,7 +59,7 @@ export const siteContent = {
     title: "Adrenalina, estratégia e diversão para sua turma em Piratininga",
     subtitle:
       "Uma experiência de paintball profissional com segurança, estrutura e atendimento maravilhoso para grupos, aniversários e confraternizações.",
-    image: "/images/hero/hero-bg.svg",
+    image: "/images/hero/hero-bg.jpg",
     ctaPrimary: "Agendar pelo WhatsApp",
     ctaSecondary: "Ver preços",
     social: { rating: "5,0 estrelas", reviews: "201 avaliações" },
