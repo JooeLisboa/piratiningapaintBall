@@ -13,7 +13,7 @@ export function GallerySection() {
 
   return (
     <AnimatedSection id="galeria-de-fotos" className="container-max py-16">
-      <SectionTitle title="Galeria de Fotos" description="Imagens placeholder configuradas via data/siteContent.ts para facilitar a troca por fotos reais da arena." />
+      <SectionTitle title="Galeria de Fotos" description="Imagens organizadas em public/images/gallery/. Para trocar, substitua os arquivos e atualize o array galleryImages em data/siteContent.ts." />
       <div className="grid gap-4 sm:grid-cols-2">
         {siteContent.galleryImages.map((image, index) => <GalleryItem key={image.src} item={image} onClick={() => setActiveIndex(index)} />)}
       </div>

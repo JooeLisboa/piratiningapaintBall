@@ -5,14 +5,17 @@ import { motion } from 'framer-motion';
 export function AnimatedSection({
   children,
   className,
-  delay = 0
+  delay = 0,
+  id
 }: {
   children: React.ReactNode;
   className?: string;
   delay?: number;
+  id?: string;
 }) {
   return (
     <motion.section
+      id={id}
       className={className}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}

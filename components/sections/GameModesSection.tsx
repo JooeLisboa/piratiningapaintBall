@@ -7,7 +7,7 @@ const icons = [Sword, Crown, RefreshCcw, Flag, Flag, Trophy, Trees];
 
 export function GameModesSection() {
   return (
-    <AnimatedSection id="modalidades-de-jogo" className="container-max py-16">
+    <AnimatedSection id="modalidades" className="container-max py-16">
       <SectionTitle title="Modalidades de jogo" description="Escolha a dinâmica ideal para sua turma. Observação: o time vencedor é o que atingir maior pontuação." />
       <div className="grid gap-4 lg:grid-cols-2">
         {siteContent.gameModes.map((mode, index) => {

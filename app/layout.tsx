@@ -3,8 +3,8 @@ import './globals.css';
 import { siteContent } from '@/data/siteContent';
 
 export const metadata: Metadata = {
-  title: siteContent.seo.title,
-  description: siteContent.seo.description,
+  title: siteContent.seo.homeTitle,
+  description: siteContent.seo.homeDescription,
   keywords: [
     'paintball em Piratininga',
     'arena de paintball',

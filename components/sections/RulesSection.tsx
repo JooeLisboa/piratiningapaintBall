@@ -9,7 +9,7 @@ import { SectionTitle } from '@/components/shared/SectionTitle';
 export function RulesSection() {
   const [open, setOpen] = useState(true);
   return (
-    <AnimatedSection id="regras-de-jogo" className="container-max py-16">
+    <AnimatedSection id="regras" className="container-max py-16">
       <SectionTitle title="Regras de jogo" description="Segurança e responsabilidade em primeiro lugar em toda partida." />
       <div className="card-surface overflow-hidden">
         <button className="flex w-full items-center justify-between px-5 py-4 text-left font-semibold" onClick={() => setOpen((prev) => !prev)}>

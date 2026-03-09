@@ -3,11 +3,8 @@ import { Header } from '@/components/layout/Header';
 import { ArenaSection } from '@/components/sections/ArenaSection';
 import { ContactSection } from '@/components/sections/ContactSection';
 import { FinalCtaSection } from '@/components/sections/FinalCtaSection';
-import { GallerySection } from '@/components/sections/GallerySection';
 import { GameModesSection } from '@/components/sections/GameModesSection';
 import { HeroSection } from '@/components/sections/HeroSection';
-import { LocationSection } from '@/components/sections/LocationSection';
-import { NoticesSection } from '@/components/sections/NoticesSection';
 import { PricingSection } from '@/components/sections/PricingSection';
 import { RulesSection } from '@/components/sections/RulesSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
@@ -23,10 +20,7 @@ export default function HomePage() {
         <TestimonialsSection />
         <GameModesSection />
         <RulesSection />
-        <GallerySection />
-        <LocationSection />
         <PricingSection />
-        <NoticesSection />
         <ContactSection />
         <FinalCtaSection />
       </main>
