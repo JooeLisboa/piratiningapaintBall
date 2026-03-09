@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Hero paintball">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#0b0f0b"/>
+      <stop offset="50%" stop-color="#1a261a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#g)"/>
+  <circle cx="350" cy="250" r="200" fill="#f59e0b" opacity="0.15"/>
+  <circle cx="1200" cy="650" r="240" fill="#4a6a3a" opacity="0.22"/>
+  <text x="80" y="790" font-size="72" font-family="Arial, sans-serif" fill="#ffffff" opacity="0.7">Arena Paintball Piratininga</text>
+</svg>
