@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-tactical-950 text-zinc-100 antialiased;
+}
+
+.container-max {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.card-surface {
+  @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md;
+}
